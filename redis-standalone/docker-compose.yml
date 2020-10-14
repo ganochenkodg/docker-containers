@@ -1,0 +1,13 @@
+version: '2'
+services:
+  redis-cluster:
+    image: redis-standalone
+    restart: unless-stopped
+    privileged: true
+    network_mode: "host"
+    environment:
+      - BIND_ADDRESS=0.0.0.0
+      - REDIS_PASS=4xdhKZJW2VKVhMwwzFd7nmireecJav9DgG9
+    volumes:
+      - /home/dima/redislogs:/var/log/container
+      - /home/dima/data:/var/redis/6379

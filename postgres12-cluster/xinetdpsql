@@ -1,0 +1,15 @@
+service postgrescheck
+{
+  type = UNLISTED
+  flags = REUSE
+  wait = no
+  disable = no
+  socket_type = stream
+  protocol  = tcp
+  user = postgres
+  server = /usr/local/bin/psqlservice.sh
+  port = 5433
+  only_from = 0.0.0.0/0
+  per_source = UNLIMITED
+  log_type = SYSLOG daemon debug
+}
